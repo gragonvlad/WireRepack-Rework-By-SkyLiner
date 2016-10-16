@@ -1584,7 +1584,7 @@ CREATE TABLE IF NOT EXISTS `realmlist` (
 --
 
 INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`) VALUES
-(1, 'Trinity', '127.0.0.1', '127.0.0.1', '255.255.255.0', 8085, 1, 2, 1, 0, 0, 12340);
+(1, 'Trinity', '127.0.0.1', '127.0.0.1', '255.255.255.0', 8085, 1, 0, 1, 0, 0, 12340);
 
 -- --------------------------------------------------------
 
@@ -1668,7 +1668,8 @@ INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`
 (1, 1475965801, 1802, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
 (1, 1475968100, 1200, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
 (1, 1476138338, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1476139344, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
+(1, 1476139344, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1476581358, 0, 0, 'TrinityCore rev. e2ecbc52e0e1+ 2016-10-16 02:24:00 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
 
 --
 -- Constraints for dumped tables
