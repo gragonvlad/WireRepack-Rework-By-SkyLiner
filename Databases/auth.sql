@@ -1,3 +1,21 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 18, 2016 at 12:03 AM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
 -- Database: `auth`
 --
@@ -1616,10 +1634,11 @@ INSERT INTO `updates` (`name`, `hash`, `state`, `timestamp`, `speed`) VALUES
 ('2015_08_21_00_auth.sql', 'C31A9E1D28E11B60BE8F8198637DD51F6D75123F', 'ARCHIVED', '2015-10-05 23:16:19', 0),
 ('2015_11_07_00_auth.sql', '0ACDD35EC9745231BCFA701B78056DEF94D0CC53', 'ARCHIVED', '2016-04-11 00:42:36', 92),
 ('2016_01_13_00_auth.sql', '24615CC69B3CD7BB4699874647C35BA86E8A93FD', 'ARCHIVED', '2016-01-13 00:00:00', 0),
-('2016_04_11_00_auth.sql', '0ACDD35EC9745231BCFA701B78056DEF94D0CC53', 'RELEASED', '2016-04-11 03:18:17', 0),
-('2016_05_11_00_auth.sql', '95B66235B8D67BF1CA216EB09F313C1F8F393B47', 'RELEASED', '2016-04-16 13:17:11', 0),
-('2016_06_06_00_auth.sql', 'A0A8D73A952D0618833416513D53F73A70E7EA25', 'RELEASED', '2016-10-02 02:15:54', 49),
-('2016_09_22_00_auth.sql', '70047954E3556BFA430ADD5680EF8797F74A4B9E', 'RELEASED', '2016-10-06 22:21:42', 75);
+('2016_04_11_00_auth.sql', '0ACDD35EC9745231BCFA701B78056DEF94D0CC53', 'ARCHIVED', '2016-04-11 03:18:17', 0),
+('2016_05_11_00_auth.sql', '95B66235B8D67BF1CA216EB09F313C1F8F393B47', 'ARCHIVED', '2016-04-16 13:17:11', 0),
+('2016_06_06_00_auth.sql', 'A0A8D73A952D0618833416513D53F73A70E7EA25', 'ARCHIVED', '2016-10-02 02:15:54', 49),
+('2016_09_22_00_auth.sql', '70047954E3556BFA430ADD5680EF8797F74A4B9E', 'ARCHIVED', '2016-10-06 22:21:42', 75),
+('2016_10_16_00_auth.sql', '0ACDD35EC9745231BCFA701B78056DEF94D0CC53', 'RELEASED', '2016-10-17 22:02:01', 43);
 
 -- --------------------------------------------------------
 
@@ -1669,7 +1688,8 @@ INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`
 (1, 1475968100, 1200, 1, 'TrinityCore rev. 58da30cd3409+ 2016-10-08 22:54:50 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
 (1, 1476138338, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
 (1, 1476139344, 0, 0, 'TrinityCore rev. 819ebffe4845+ 2016-10-10 22:34:48 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
-(1, 1476581358, 0, 0, 'TrinityCore rev. e2ecbc52e0e1+ 2016-10-16 02:24:00 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
+(1, 1476581358, 0, 0, 'TrinityCore rev. e2ecbc52e0e1+ 2016-10-16 02:24:00 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)'),
+(1, 1476741736, 0, 0, 'TrinityCore rev. 77b045bed9bf 2016-10-17 22:25:39 +0100 (3.3.5 branch) (Win64, RelWithDebInfo, Static)');
 
 --
 -- Constraints for dumped tables
