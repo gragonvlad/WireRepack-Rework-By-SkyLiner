@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2016 at 12:03 AM
+-- Generation Time: Oct 19, 2016 at 11:49 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -1602,7 +1602,7 @@ CREATE TABLE IF NOT EXISTS `realmlist` (
 --
 
 INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`) VALUES
-(1, 'Trinity', '127.0.0.1', '127.0.0.1', '255.255.255.0', 8085, 1, 0, 1, 0, 0, 12340);
+(1, 'Trinity', '127.0.0.1', '127.0.0.1', '255.255.255.0', 8085, 1, 2, 1, 0, 0, 12340);
 
 -- --------------------------------------------------------
 
