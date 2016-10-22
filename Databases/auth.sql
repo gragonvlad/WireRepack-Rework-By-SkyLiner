@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2016 at 11:49 PM
--- Server version: 5.6.17
+-- Generation Time: 22-Out-2016 às 14:09
+-- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account`
+-- Estrutura da tabela `account`
 --
 
 CREATE TABLE IF NOT EXISTS `account` (
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Account System' AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `account`
+-- Extraindo dados da tabela `account`
 --
 
 INSERT INTO `account` (`id`, `username`, `sha_pass_hash`, `sessionkey`, `v`, `s`, `token_key`, `email`, `reg_mail`, `joindate`, `last_ip`, `last_attempt_ip`, `failed_logins`, `locked`, `lock_country`, `last_login`, `online`, `expansion`, `mutetime`, `mutereason`, `muteby`, `locale`, `os`, `recruiter`) VALUES
@@ -65,7 +65,7 @@ INSERT INTO `account` (`id`, `username`, `sha_pass_hash`, `sessionkey`, `v`, `s`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account_access`
+-- Estrutura da tabela `account_access`
 --
 
 CREATE TABLE IF NOT EXISTS `account_access` (
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `account_access` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `account_access`
+-- Extraindo dados da tabela `account_access`
 --
 
 INSERT INTO `account_access` (`id`, `gmlevel`, `RealmID`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `account_access` (`id`, `gmlevel`, `RealmID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account_banned`
+-- Estrutura da tabela `account_banned`
 --
 
 CREATE TABLE IF NOT EXISTS `account_banned` (
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `account_banned` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `account_muted`
+-- Estrutura da tabela `account_muted`
 --
 
 CREATE TABLE IF NOT EXISTS `account_muted` (
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `account_muted` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `autobroadcast`
+-- Estrutura da tabela `autobroadcast`
 --
 
 CREATE TABLE IF NOT EXISTS `autobroadcast` (
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `autobroadcast` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ip2nation`
+-- Estrutura da tabela `ip2nation`
 --
 
 CREATE TABLE IF NOT EXISTS `ip2nation` (
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `ip2nation` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ip2nationcountries`
+-- Estrutura da tabela `ip2nationcountries`
 --
 
 CREATE TABLE IF NOT EXISTS `ip2nationcountries` (
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `ip2nationcountries` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ip_banned`
+-- Estrutura da tabela `ip_banned`
 --
 
 CREATE TABLE IF NOT EXISTS `ip_banned` (
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `ip_banned` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logs`
+-- Estrutura da tabela `logs`
 --
 
 CREATE TABLE IF NOT EXISTS `logs` (
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logs_ip_actions`
+-- Estrutura da tabela `logs_ip_actions`
 --
 
 CREATE TABLE IF NOT EXISTS `logs_ip_actions` (
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `logs_ip_actions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rbac_account_permissions`
+-- Estrutura da tabela `rbac_account_permissions`
 --
 
 CREATE TABLE IF NOT EXISTS `rbac_account_permissions` (
@@ -223,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `rbac_account_permissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rbac_default_permissions`
+-- Estrutura da tabela `rbac_default_permissions`
 --
 
 CREATE TABLE IF NOT EXISTS `rbac_default_permissions` (
@@ -235,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `rbac_default_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Default permission to assign to different account security levels';
 
 --
--- Dumping data for table `rbac_default_permissions`
+-- Extraindo dados da tabela `rbac_default_permissions`
 --
 
 INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALUES
@@ -247,7 +247,7 @@ INSERT INTO `rbac_default_permissions` (`secId`, `permissionId`, `realmId`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rbac_linked_permissions`
+-- Estrutura da tabela `rbac_linked_permissions`
 --
 
 CREATE TABLE IF NOT EXISTS `rbac_linked_permissions` (
@@ -259,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `rbac_linked_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Permission - Linked Permission relation';
 
 --
--- Dumping data for table `rbac_linked_permissions`
+-- Extraindo dados da tabela `rbac_linked_permissions`
 --
 
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES
@@ -894,7 +894,7 @@ INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rbac_permissions`
+-- Estrutura da tabela `rbac_permissions`
 --
 
 CREATE TABLE IF NOT EXISTS `rbac_permissions` (
@@ -904,7 +904,7 @@ CREATE TABLE IF NOT EXISTS `rbac_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Permission List';
 
 --
--- Dumping data for table `rbac_permissions`
+-- Extraindo dados da tabela `rbac_permissions`
 --
 
 INSERT INTO `rbac_permissions` (`id`, `name`) VALUES
@@ -1556,7 +1556,7 @@ INSERT INTO `rbac_permissions` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `realmcharacters`
+-- Estrutura da tabela `realmcharacters`
 --
 
 CREATE TABLE IF NOT EXISTS `realmcharacters` (
@@ -1568,7 +1568,7 @@ CREATE TABLE IF NOT EXISTS `realmcharacters` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Realm Character Tracker';
 
 --
--- Dumping data for table `realmcharacters`
+-- Extraindo dados da tabela `realmcharacters`
 --
 
 INSERT INTO `realmcharacters` (`realmid`, `acctid`, `numchars`) VALUES
@@ -1577,7 +1577,7 @@ INSERT INTO `realmcharacters` (`realmid`, `acctid`, `numchars`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `realmlist`
+-- Estrutura da tabela `realmlist`
 --
 
 CREATE TABLE IF NOT EXISTS `realmlist` (
@@ -1598,7 +1598,7 @@ CREATE TABLE IF NOT EXISTS `realmlist` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Realm System' AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `realmlist`
+-- Extraindo dados da tabela `realmlist`
 --
 
 INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMask`, `port`, `icon`, `flag`, `timezone`, `allowedSecurityLevel`, `population`, `gamebuild`) VALUES
@@ -1607,7 +1607,7 @@ INSERT INTO `realmlist` (`id`, `name`, `address`, `localAddress`, `localSubnetMa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `updates`
+-- Estrutura da tabela `updates`
 --
 
 CREATE TABLE IF NOT EXISTS `updates` (
@@ -1620,7 +1620,7 @@ CREATE TABLE IF NOT EXISTS `updates` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='List of all applied updates in this database.';
 
 --
--- Dumping data for table `updates`
+-- Extraindo dados da tabela `updates`
 --
 
 INSERT INTO `updates` (`name`, `hash`, `state`, `timestamp`, `speed`) VALUES
@@ -1643,7 +1643,7 @@ INSERT INTO `updates` (`name`, `hash`, `state`, `timestamp`, `speed`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `updates_include`
+-- Estrutura da tabela `updates_include`
 --
 
 CREATE TABLE IF NOT EXISTS `updates_include` (
@@ -1653,7 +1653,7 @@ CREATE TABLE IF NOT EXISTS `updates_include` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='List of directories where we want to include sql updates.';
 
 --
--- Dumping data for table `updates_include`
+-- Extraindo dados da tabela `updates_include`
 --
 
 INSERT INTO `updates_include` (`path`, `state`) VALUES
@@ -1664,7 +1664,7 @@ INSERT INTO `updates_include` (`path`, `state`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `uptime`
+-- Estrutura da tabela `uptime`
 --
 
 CREATE TABLE IF NOT EXISTS `uptime` (
@@ -1677,7 +1677,7 @@ CREATE TABLE IF NOT EXISTS `uptime` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Uptime system';
 
 --
--- Dumping data for table `uptime`
+-- Extraindo dados da tabela `uptime`
 --
 
 INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`) VALUES
@@ -1696,20 +1696,20 @@ INSERT INTO `uptime` (`realmid`, `starttime`, `uptime`, `maxplayers`, `revision`
 --
 
 --
--- Constraints for table `rbac_account_permissions`
+-- Limitadores para a tabela `rbac_account_permissions`
 --
 ALTER TABLE `rbac_account_permissions`
   ADD CONSTRAINT `fk__rbac_account_permissions__account` FOREIGN KEY (`accountId`) REFERENCES `account` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk__rbac_account_roles__rbac_permissions` FOREIGN KEY (`permissionId`) REFERENCES `rbac_permissions` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `rbac_default_permissions`
+-- Limitadores para a tabela `rbac_default_permissions`
 --
 ALTER TABLE `rbac_default_permissions`
   ADD CONSTRAINT `fk__rbac_default_permissions__rbac_permissions` FOREIGN KEY (`permissionId`) REFERENCES `rbac_permissions` (`id`);
 
 --
--- Constraints for table `rbac_linked_permissions`
+-- Limitadores para a tabela `rbac_linked_permissions`
 --
 ALTER TABLE `rbac_linked_permissions`
   ADD CONSTRAINT `fk__rbac_linked_permissions__rbac_permissions1` FOREIGN KEY (`id`) REFERENCES `rbac_permissions` (`id`) ON DELETE CASCADE,
