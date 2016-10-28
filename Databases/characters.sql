@@ -3,8 +3,8 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Out-2016 às 14:09
--- Versão do servidor: 5.6.17
+-- Generation Time: Oct 28, 2016 at 07:24 PM
+-- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_data`
+-- Table structure for table `account_data`
 --
 
 CREATE TABLE IF NOT EXISTS `account_data` (
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `account_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `account_data`
+-- Dumping data for table `account_data`
 --
 
 INSERT INTO `account_data` (`accountId`, `type`, `time`, `data`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `account_data` (`accountId`, `type`, `time`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_instance_times`
+-- Table structure for table `account_instance_times`
 --
 
 CREATE TABLE IF NOT EXISTS `account_instance_times` (
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `account_instance_times` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `account_instance_times`
+-- Dumping data for table `account_instance_times`
 --
 
 INSERT INTO `account_instance_times` (`accountId`, `instanceId`, `releaseTime`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `account_instance_times` (`accountId`, `instanceId`, `releaseTime`) 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `account_tutorial`
+-- Table structure for table `account_tutorial`
 --
 
 CREATE TABLE IF NOT EXISTS `account_tutorial` (
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `account_tutorial` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `account_tutorial`
+-- Dumping data for table `account_tutorial`
 --
 
 INSERT INTO `account_tutorial` (`accountId`, `tut0`, `tut1`, `tut2`, `tut3`, `tut4`, `tut5`, `tut6`, `tut7`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `account_tutorial` (`accountId`, `tut0`, `tut1`, `tut2`, `tut3`, `tu
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `addons`
+-- Table structure for table `addons`
 --
 
 CREATE TABLE IF NOT EXISTS `addons` (
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `addons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Addons';
 
 --
--- Extraindo dados da tabela `addons`
+-- Dumping data for table `addons`
 --
 
 INSERT INTO `addons` (`name`, `crc`) VALUES
@@ -141,7 +141,7 @@ INSERT INTO `addons` (`name`, `crc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `arena_team`
+-- Table structure for table `arena_team`
 --
 
 CREATE TABLE IF NOT EXISTS `arena_team` (
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `arena_team` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `arena_team_member`
+-- Table structure for table `arena_team_member`
 --
 
 CREATE TABLE IF NOT EXISTS `arena_team_member` (
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `arena_team_member` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `auctionhouse`
+-- Table structure for table `auctionhouse`
 --
 
 CREATE TABLE IF NOT EXISTS `auctionhouse` (
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `auctionhouse` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `banned_addons`
+-- Table structure for table `banned_addons`
 --
 
 CREATE TABLE IF NOT EXISTS `banned_addons` (
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `banned_addons` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `battleground_deserters`
+-- Table structure for table `battleground_deserters`
 --
 
 CREATE TABLE IF NOT EXISTS `battleground_deserters` (
@@ -231,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `battleground_deserters` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `bugreport`
+-- Table structure for table `bugreport`
 --
 
 CREATE TABLE IF NOT EXISTS `bugreport` (
@@ -244,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `bugreport` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `calendar_events`
+-- Table structure for table `calendar_events`
 --
 
 CREATE TABLE IF NOT EXISTS `calendar_events` (
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `calendar_events` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `calendar_invites`
+-- Table structure for table `calendar_invites`
 --
 
 CREATE TABLE IF NOT EXISTS `calendar_invites` (
@@ -281,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `calendar_invites` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `channels`
+-- Table structure for table `channels`
 --
 
 CREATE TABLE IF NOT EXISTS `channels` (
@@ -298,7 +298,7 @@ CREATE TABLE IF NOT EXISTS `channels` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `characters`
+-- Table structure for table `characters`
 --
 
 CREATE TABLE IF NOT EXISTS `characters` (
@@ -385,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `characters`
+-- Dumping data for table `characters`
 --
 
 INSERT INTO `characters` (`guid`, `account`, `name`, `race`, `class`, `gender`, `level`, `xp`, `money`, `skin`, `face`, `hairStyle`, `hairColor`, `facialStyle`, `bankSlots`, `restState`, `playerFlags`, `position_x`, `position_y`, `position_z`, `map`, `instance_id`, `instance_mode_mask`, `orientation`, `taximask`, `online`, `cinematic`, `totaltime`, `leveltime`, `logout_time`, `is_logout_resting`, `rest_bonus`, `resettalents_cost`, `resettalents_time`, `trans_x`, `trans_y`, `trans_z`, `trans_o`, `transguid`, `extra_flags`, `stable_slots`, `at_login`, `zone`, `death_expire_time`, `taxi_path`, `arenaPoints`, `totalHonorPoints`, `todayHonorPoints`, `yesterdayHonorPoints`, `totalKills`, `todayKills`, `yesterdayKills`, `chosenTitle`, `knownCurrencies`, `watchedFaction`, `drunk`, `health`, `power1`, `power2`, `power3`, `power4`, `power5`, `power6`, `power7`, `latency`, `talentGroupsCount`, `activeTalentGroup`, `exploredZones`, `equipmentCache`, `ammoId`, `knownTitles`, `actionBars`, `grantableLevels`, `deleteInfos_Account`, `deleteInfos_Name`, `deleteDate`) VALUES
@@ -394,7 +394,7 @@ INSERT INTO `characters` (`guid`, `account`, `name`, `race`, `class`, `gender`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_account_data`
+-- Table structure for table `character_account_data`
 --
 
 CREATE TABLE IF NOT EXISTS `character_account_data` (
@@ -406,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `character_account_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `character_account_data`
+-- Dumping data for table `character_account_data`
 --
 
 INSERT INTO `character_account_data` (`guid`, `type`, `time`, `data`) VALUES
@@ -417,7 +417,7 @@ INSERT INTO `character_account_data` (`guid`, `type`, `time`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_achievement`
+-- Table structure for table `character_achievement`
 --
 
 CREATE TABLE IF NOT EXISTS `character_achievement` (
@@ -428,7 +428,7 @@ CREATE TABLE IF NOT EXISTS `character_achievement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `character_achievement`
+-- Dumping data for table `character_achievement`
 --
 
 INSERT INTO `character_achievement` (`guid`, `achievement`, `date`) VALUES
@@ -440,7 +440,7 @@ INSERT INTO `character_achievement` (`guid`, `achievement`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_achievement_progress`
+-- Table structure for table `character_achievement_progress`
 --
 
 CREATE TABLE IF NOT EXISTS `character_achievement_progress` (
@@ -452,7 +452,7 @@ CREATE TABLE IF NOT EXISTS `character_achievement_progress` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `character_achievement_progress`
+-- Dumping data for table `character_achievement_progress`
 --
 
 INSERT INTO `character_achievement_progress` (`guid`, `criteria`, `counter`, `date`) VALUES
@@ -468,7 +468,7 @@ INSERT INTO `character_achievement_progress` (`guid`, `criteria`, `counter`, `da
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_action`
+-- Table structure for table `character_action`
 --
 
 CREATE TABLE IF NOT EXISTS `character_action` (
@@ -481,7 +481,7 @@ CREATE TABLE IF NOT EXISTS `character_action` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `character_action`
+-- Dumping data for table `character_action`
 --
 
 INSERT INTO `character_action` (`guid`, `spec`, `button`, `action`, `type`) VALUES
@@ -490,7 +490,7 @@ INSERT INTO `character_action` (`guid`, `spec`, `button`, `action`, `type`) VALU
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_arena_stats`
+-- Table structure for table `character_arena_stats`
 --
 
 CREATE TABLE IF NOT EXISTS `character_arena_stats` (
@@ -503,7 +503,7 @@ CREATE TABLE IF NOT EXISTS `character_arena_stats` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_aura`
+-- Table structure for table `character_aura`
 --
 
 CREATE TABLE IF NOT EXISTS `character_aura` (
@@ -527,7 +527,7 @@ CREATE TABLE IF NOT EXISTS `character_aura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_aura`
+-- Dumping data for table `character_aura`
 --
 
 INSERT INTO `character_aura` (`guid`, `casterGuid`, `itemGuid`, `spell`, `effectMask`, `recalculateMask`, `stackCount`, `amount0`, `amount1`, `amount2`, `base_amount0`, `base_amount1`, `base_amount2`, `maxDuration`, `remainTime`, `remainCharges`) VALUES
@@ -537,7 +537,7 @@ INSERT INTO `character_aura` (`guid`, `casterGuid`, `itemGuid`, `spell`, `effect
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_banned`
+-- Table structure for table `character_banned`
 --
 
 CREATE TABLE IF NOT EXISTS `character_banned` (
@@ -553,7 +553,7 @@ CREATE TABLE IF NOT EXISTS `character_banned` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_battleground_data`
+-- Table structure for table `character_battleground_data`
 --
 
 CREATE TABLE IF NOT EXISTS `character_battleground_data` (
@@ -572,7 +572,7 @@ CREATE TABLE IF NOT EXISTS `character_battleground_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_battleground_data`
+-- Dumping data for table `character_battleground_data`
 --
 
 INSERT INTO `character_battleground_data` (`guid`, `instanceId`, `team`, `joinX`, `joinY`, `joinZ`, `joinO`, `joinMapId`, `taxiStart`, `taxiEnd`, `mountSpell`) VALUES
@@ -581,7 +581,7 @@ INSERT INTO `character_battleground_data` (`guid`, `instanceId`, `team`, `joinX`
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_battleground_random`
+-- Table structure for table `character_battleground_random`
 --
 
 CREATE TABLE IF NOT EXISTS `character_battleground_random` (
@@ -592,7 +592,7 @@ CREATE TABLE IF NOT EXISTS `character_battleground_random` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_declinedname`
+-- Table structure for table `character_declinedname`
 --
 
 CREATE TABLE IF NOT EXISTS `character_declinedname` (
@@ -608,7 +608,7 @@ CREATE TABLE IF NOT EXISTS `character_declinedname` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_equipmentsets`
+-- Table structure for table `character_equipmentsets`
 --
 
 CREATE TABLE IF NOT EXISTS `character_equipmentsets` (
@@ -645,7 +645,7 @@ CREATE TABLE IF NOT EXISTS `character_equipmentsets` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_fishingsteps`
+-- Table structure for table `character_fishingsteps`
 --
 
 CREATE TABLE IF NOT EXISTS `character_fishingsteps` (
@@ -657,7 +657,7 @@ CREATE TABLE IF NOT EXISTS `character_fishingsteps` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_gifts`
+-- Table structure for table `character_gifts`
 --
 
 CREATE TABLE IF NOT EXISTS `character_gifts` (
@@ -672,7 +672,7 @@ CREATE TABLE IF NOT EXISTS `character_gifts` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_glyphs`
+-- Table structure for table `character_glyphs`
 --
 
 CREATE TABLE IF NOT EXISTS `character_glyphs` (
@@ -688,7 +688,7 @@ CREATE TABLE IF NOT EXISTS `character_glyphs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `character_glyphs`
+-- Dumping data for table `character_glyphs`
 --
 
 INSERT INTO `character_glyphs` (`guid`, `talentGroup`, `glyph1`, `glyph2`, `glyph3`, `glyph4`, `glyph5`, `glyph6`) VALUES
@@ -697,7 +697,7 @@ INSERT INTO `character_glyphs` (`guid`, `talentGroup`, `glyph1`, `glyph2`, `glyp
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_homebind`
+-- Table structure for table `character_homebind`
 --
 
 CREATE TABLE IF NOT EXISTS `character_homebind` (
@@ -711,7 +711,7 @@ CREATE TABLE IF NOT EXISTS `character_homebind` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_homebind`
+-- Dumping data for table `character_homebind`
 --
 
 INSERT INTO `character_homebind` (`guid`, `mapId`, `zoneId`, `posX`, `posY`, `posZ`) VALUES
@@ -720,7 +720,7 @@ INSERT INTO `character_homebind` (`guid`, `mapId`, `zoneId`, `posX`, `posY`, `po
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_instance`
+-- Table structure for table `character_instance`
 --
 
 CREATE TABLE IF NOT EXISTS `character_instance` (
@@ -732,17 +732,10 @@ CREATE TABLE IF NOT EXISTS `character_instance` (
   KEY `instance` (`instance`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `character_instance`
---
-
-INSERT INTO `character_instance` (`guid`, `instance`, `permanent`, `extendState`) VALUES
-(1, 7, 0, 1);
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_inventory`
+-- Table structure for table `character_inventory`
 --
 
 CREATE TABLE IF NOT EXISTS `character_inventory` (
@@ -756,7 +749,7 @@ CREATE TABLE IF NOT EXISTS `character_inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_inventory`
+-- Dumping data for table `character_inventory`
 --
 
 INSERT INTO `character_inventory` (`guid`, `bag`, `slot`, `item`) VALUES
@@ -774,7 +767,7 @@ INSERT INTO `character_inventory` (`guid`, `bag`, `slot`, `item`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_pet`
+-- Table structure for table `character_pet`
 --
 
 CREATE TABLE IF NOT EXISTS `character_pet` (
@@ -803,7 +796,7 @@ CREATE TABLE IF NOT EXISTS `character_pet` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_pet_declinedname`
+-- Table structure for table `character_pet_declinedname`
 --
 
 CREATE TABLE IF NOT EXISTS `character_pet_declinedname` (
@@ -821,7 +814,7 @@ CREATE TABLE IF NOT EXISTS `character_pet_declinedname` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_queststatus`
+-- Table structure for table `character_queststatus`
 --
 
 CREATE TABLE IF NOT EXISTS `character_queststatus` (
@@ -845,7 +838,7 @@ CREATE TABLE IF NOT EXISTS `character_queststatus` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_queststatus_daily`
+-- Table structure for table `character_queststatus_daily`
 --
 
 CREATE TABLE IF NOT EXISTS `character_queststatus_daily` (
@@ -859,7 +852,7 @@ CREATE TABLE IF NOT EXISTS `character_queststatus_daily` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_queststatus_monthly`
+-- Table structure for table `character_queststatus_monthly`
 --
 
 CREATE TABLE IF NOT EXISTS `character_queststatus_monthly` (
@@ -872,7 +865,7 @@ CREATE TABLE IF NOT EXISTS `character_queststatus_monthly` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_queststatus_rewarded`
+-- Table structure for table `character_queststatus_rewarded`
 --
 
 CREATE TABLE IF NOT EXISTS `character_queststatus_rewarded` (
@@ -885,7 +878,7 @@ CREATE TABLE IF NOT EXISTS `character_queststatus_rewarded` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_queststatus_seasonal`
+-- Table structure for table `character_queststatus_seasonal`
 --
 
 CREATE TABLE IF NOT EXISTS `character_queststatus_seasonal` (
@@ -899,7 +892,7 @@ CREATE TABLE IF NOT EXISTS `character_queststatus_seasonal` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_queststatus_weekly`
+-- Table structure for table `character_queststatus_weekly`
 --
 
 CREATE TABLE IF NOT EXISTS `character_queststatus_weekly` (
@@ -912,7 +905,7 @@ CREATE TABLE IF NOT EXISTS `character_queststatus_weekly` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_reputation`
+-- Table structure for table `character_reputation`
 --
 
 CREATE TABLE IF NOT EXISTS `character_reputation` (
@@ -924,7 +917,7 @@ CREATE TABLE IF NOT EXISTS `character_reputation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_reputation`
+-- Dumping data for table `character_reputation`
 --
 
 INSERT INTO `character_reputation` (`guid`, `faction`, `standing`, `flags`) VALUES
@@ -1037,7 +1030,7 @@ INSERT INTO `character_reputation` (`guid`, `faction`, `standing`, `flags`) VALU
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_skills`
+-- Table structure for table `character_skills`
 --
 
 CREATE TABLE IF NOT EXISTS `character_skills` (
@@ -1049,7 +1042,7 @@ CREATE TABLE IF NOT EXISTS `character_skills` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_skills`
+-- Dumping data for table `character_skills`
 --
 
 INSERT INTO `character_skills` (`guid`, `skill`, `value`, `max`) VALUES
@@ -1074,7 +1067,7 @@ INSERT INTO `character_skills` (`guid`, `skill`, `value`, `max`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_social`
+-- Table structure for table `character_social`
 --
 
 CREATE TABLE IF NOT EXISTS `character_social` (
@@ -1089,7 +1082,7 @@ CREATE TABLE IF NOT EXISTS `character_social` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_spell`
+-- Table structure for table `character_spell`
 --
 
 CREATE TABLE IF NOT EXISTS `character_spell` (
@@ -1101,7 +1094,7 @@ CREATE TABLE IF NOT EXISTS `character_spell` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Player System';
 
 --
--- Extraindo dados da tabela `character_spell`
+-- Dumping data for table `character_spell`
 --
 
 INSERT INTO `character_spell` (`guid`, `spell`, `active`, `disabled`) VALUES
@@ -1111,7 +1104,7 @@ INSERT INTO `character_spell` (`guid`, `spell`, `active`, `disabled`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_spell_cooldown`
+-- Table structure for table `character_spell_cooldown`
 --
 
 CREATE TABLE IF NOT EXISTS `character_spell_cooldown` (
@@ -1127,7 +1120,7 @@ CREATE TABLE IF NOT EXISTS `character_spell_cooldown` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_stats`
+-- Table structure for table `character_stats`
 --
 
 CREATE TABLE IF NOT EXISTS `character_stats` (
@@ -1168,7 +1161,7 @@ CREATE TABLE IF NOT EXISTS `character_stats` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `character_talent`
+-- Table structure for table `character_talent`
 --
 
 CREATE TABLE IF NOT EXISTS `character_talent` (
@@ -1181,7 +1174,7 @@ CREATE TABLE IF NOT EXISTS `character_talent` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `corpse`
+-- Table structure for table `corpse`
 --
 
 CREATE TABLE IF NOT EXISTS `corpse` (
@@ -1211,7 +1204,7 @@ CREATE TABLE IF NOT EXISTS `corpse` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `creature_respawn`
+-- Table structure for table `creature_respawn`
 --
 
 CREATE TABLE IF NOT EXISTS `creature_respawn` (
@@ -1223,18 +1216,10 @@ CREATE TABLE IF NOT EXISTS `creature_respawn` (
   KEY `idx_instance` (`instanceId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Grid Loading System';
 
---
--- Extraindo dados da tabela `creature_respawn`
---
-
-INSERT INTO `creature_respawn` (`guid`, `respawnTime`, `mapId`, `instanceId`) VALUES
-(44376, 1475977914, 229, 7),
-(45808, 1476967354, 229, 7);
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `custom_transmogrification`
+-- Table structure for table `custom_transmogrification`
 --
 
 CREATE TABLE IF NOT EXISTS `custom_transmogrification` (
@@ -1248,7 +1233,7 @@ CREATE TABLE IF NOT EXISTS `custom_transmogrification` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `custom_transmogrification_sets`
+-- Table structure for table `custom_transmogrification_sets`
 --
 
 CREATE TABLE IF NOT EXISTS `custom_transmogrification_sets` (
@@ -1262,7 +1247,7 @@ CREATE TABLE IF NOT EXISTS `custom_transmogrification_sets` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gameobject_respawn`
+-- Table structure for table `gameobject_respawn`
 --
 
 CREATE TABLE IF NOT EXISTS `gameobject_respawn` (
@@ -1277,7 +1262,7 @@ CREATE TABLE IF NOT EXISTS `gameobject_respawn` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `game_event_condition_save`
+-- Table structure for table `game_event_condition_save`
 --
 
 CREATE TABLE IF NOT EXISTS `game_event_condition_save` (
@@ -1290,7 +1275,7 @@ CREATE TABLE IF NOT EXISTS `game_event_condition_save` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `game_event_save`
+-- Table structure for table `game_event_save`
 --
 
 CREATE TABLE IF NOT EXISTS `game_event_save` (
@@ -1303,7 +1288,7 @@ CREATE TABLE IF NOT EXISTS `game_event_save` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gm_subsurvey`
+-- Table structure for table `gm_subsurvey`
 --
 
 CREATE TABLE IF NOT EXISTS `gm_subsurvey` (
@@ -1317,7 +1302,7 @@ CREATE TABLE IF NOT EXISTS `gm_subsurvey` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gm_survey`
+-- Table structure for table `gm_survey`
 --
 
 CREATE TABLE IF NOT EXISTS `gm_survey` (
@@ -1332,7 +1317,7 @@ CREATE TABLE IF NOT EXISTS `gm_survey` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `gm_ticket`
+-- Table structure for table `gm_ticket`
 --
 
 CREATE TABLE IF NOT EXISTS `gm_ticket` (
@@ -1362,7 +1347,7 @@ CREATE TABLE IF NOT EXISTS `gm_ticket` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `groups`
+-- Table structure for table `groups`
 --
 
 CREATE TABLE IF NOT EXISTS `groups` (
@@ -1390,7 +1375,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `group_instance`
+-- Table structure for table `group_instance`
 --
 
 CREATE TABLE IF NOT EXISTS `group_instance` (
@@ -1404,7 +1389,7 @@ CREATE TABLE IF NOT EXISTS `group_instance` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `group_member`
+-- Table structure for table `group_member`
 --
 
 CREATE TABLE IF NOT EXISTS `group_member` (
@@ -1419,7 +1404,7 @@ CREATE TABLE IF NOT EXISTS `group_member` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild`
+-- Table structure for table `guild`
 --
 
 CREATE TABLE IF NOT EXISTS `guild` (
@@ -1441,7 +1426,7 @@ CREATE TABLE IF NOT EXISTS `guild` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_bank_eventlog`
+-- Table structure for table `guild_bank_eventlog`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_bank_eventlog` (
@@ -1463,7 +1448,7 @@ CREATE TABLE IF NOT EXISTS `guild_bank_eventlog` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_bank_item`
+-- Table structure for table `guild_bank_item`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_bank_item` (
@@ -1479,7 +1464,7 @@ CREATE TABLE IF NOT EXISTS `guild_bank_item` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_bank_right`
+-- Table structure for table `guild_bank_right`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_bank_right` (
@@ -1495,7 +1480,7 @@ CREATE TABLE IF NOT EXISTS `guild_bank_right` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_bank_tab`
+-- Table structure for table `guild_bank_tab`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_bank_tab` (
@@ -1511,7 +1496,7 @@ CREATE TABLE IF NOT EXISTS `guild_bank_tab` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_eventlog`
+-- Table structure for table `guild_eventlog`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_eventlog` (
@@ -1531,7 +1516,7 @@ CREATE TABLE IF NOT EXISTS `guild_eventlog` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_member`
+-- Table structure for table `guild_member`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_member` (
@@ -1548,7 +1533,7 @@ CREATE TABLE IF NOT EXISTS `guild_member` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_member_withdraw`
+-- Table structure for table `guild_member_withdraw`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_member_withdraw` (
@@ -1566,7 +1551,7 @@ CREATE TABLE IF NOT EXISTS `guild_member_withdraw` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `guild_rank`
+-- Table structure for table `guild_rank`
 --
 
 CREATE TABLE IF NOT EXISTS `guild_rank` (
@@ -1582,7 +1567,7 @@ CREATE TABLE IF NOT EXISTS `guild_rank` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `instance`
+-- Table structure for table `instance`
 --
 
 CREATE TABLE IF NOT EXISTS `instance` (
@@ -1598,17 +1583,10 @@ CREATE TABLE IF NOT EXISTS `instance` (
   KEY `difficulty` (`difficulty`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Extraindo dados da tabela `instance`
---
-
-INSERT INTO `instance` (`id`, `map`, `resettime`, `difficulty`, `completedEncounters`, `data`) VALUES
-(7, 229, 1476974554, 0, 0, 'B R S 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 ');
-
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `instance_reset`
+-- Table structure for table `instance_reset`
 --
 
 CREATE TABLE IF NOT EXISTS `instance_reset` (
@@ -1620,86 +1598,86 @@ CREATE TABLE IF NOT EXISTS `instance_reset` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `instance_reset`
+-- Dumping data for table `instance_reset`
 --
 
 INSERT INTO `instance_reset` (`mapid`, `difficulty`, `resettime`) VALUES
-(249, 0, 1477195200),
-(249, 1, 1477195200),
-(269, 1, 1476936000),
-(309, 0, 1476936000),
-(409, 0, 1477195200),
-(469, 0, 1477195200),
-(509, 0, 1476936000),
-(531, 0, 1477195200),
-(532, 0, 1477195200),
-(533, 0, 1477195200),
-(533, 1, 1477195200),
-(534, 0, 1477195200),
-(540, 1, 1476936000),
-(542, 1, 1476936000),
-(543, 1, 1476936000),
-(544, 0, 1477195200),
-(545, 1, 1476936000),
-(546, 1, 1476936000),
-(547, 1, 1476936000),
-(548, 0, 1477195200),
-(550, 0, 1477195200),
-(552, 1, 1476936000),
-(553, 1, 1476936000),
-(554, 1, 1476936000),
-(555, 1, 1476936000),
-(556, 1, 1476936000),
-(557, 1, 1476936000),
-(558, 1, 1476936000),
-(560, 1, 1476936000),
-(564, 0, 1477195200),
-(565, 0, 1477195200),
-(568, 0, 1476936000),
-(574, 1, 1476936000),
-(575, 1, 1476936000),
-(576, 1, 1476936000),
-(578, 1, 1476936000),
-(580, 0, 1477195200),
-(585, 1, 1476936000),
-(595, 1, 1476936000),
-(598, 1, 1476936000),
-(599, 1, 1476936000),
-(600, 1, 1476936000),
-(601, 1, 1476936000),
-(602, 1, 1476936000),
-(603, 0, 1477195200),
-(603, 1, 1477195200),
-(604, 1, 1476936000),
-(608, 1, 1476936000),
-(615, 0, 1477195200),
-(615, 1, 1477195200),
-(616, 0, 1477195200),
-(616, 1, 1477195200),
-(619, 1, 1476936000),
-(624, 0, 1477195200),
-(624, 1, 1477195200),
-(631, 0, 1477195200),
-(631, 1, 1477195200),
-(631, 2, 1477195200),
-(631, 3, 1477195200),
-(632, 1, 1476936000),
-(649, 0, 1477195200),
-(649, 1, 1477195200),
-(649, 2, 1477195200),
-(649, 3, 1477195200),
-(650, 1, 1476936000),
-(658, 1, 1476936000),
-(668, 1, 1476936000),
-(724, 0, 1477195200),
-(724, 1, 1477195200),
-(724, 2, 1477195200),
-(724, 3, 1477195200);
+(249, 0, 1477800000),
+(249, 1, 1477800000),
+(269, 1, 1477713600),
+(309, 0, 1477713600),
+(409, 0, 1477800000),
+(469, 0, 1477800000),
+(509, 0, 1477713600),
+(531, 0, 1477800000),
+(532, 0, 1477800000),
+(533, 0, 1477800000),
+(533, 1, 1477800000),
+(534, 0, 1477800000),
+(540, 1, 1477713600),
+(542, 1, 1477713600),
+(543, 1, 1477713600),
+(544, 0, 1477800000),
+(545, 1, 1477713600),
+(546, 1, 1477713600),
+(547, 1, 1477713600),
+(548, 0, 1477800000),
+(550, 0, 1477800000),
+(552, 1, 1477713600),
+(553, 1, 1477713600),
+(554, 1, 1477713600),
+(555, 1, 1477713600),
+(556, 1, 1477713600),
+(557, 1, 1477713600),
+(558, 1, 1477713600),
+(560, 1, 1477713600),
+(564, 0, 1477800000),
+(565, 0, 1477800000),
+(568, 0, 1477713600),
+(574, 1, 1477713600),
+(575, 1, 1477713600),
+(576, 1, 1477713600),
+(578, 1, 1477713600),
+(580, 0, 1477800000),
+(585, 1, 1477713600),
+(595, 1, 1477713600),
+(598, 1, 1477713600),
+(599, 1, 1477713600),
+(600, 1, 1477713600),
+(601, 1, 1477713600),
+(602, 1, 1477713600),
+(603, 0, 1477800000),
+(603, 1, 1477800000),
+(604, 1, 1477713600),
+(608, 1, 1477713600),
+(615, 0, 1477800000),
+(615, 1, 1477800000),
+(616, 0, 1477800000),
+(616, 1, 1477800000),
+(619, 1, 1477713600),
+(624, 0, 1477800000),
+(624, 1, 1477800000),
+(631, 0, 1477800000),
+(631, 1, 1477800000),
+(631, 2, 1477800000),
+(631, 3, 1477800000),
+(632, 1, 1477713600),
+(649, 0, 1477800000),
+(649, 1, 1477800000),
+(649, 2, 1477800000),
+(649, 3, 1477800000),
+(650, 1, 1477713600),
+(658, 1, 1477713600),
+(668, 1, 1477713600),
+(724, 0, 1477800000),
+(724, 1, 1477800000),
+(724, 2, 1477800000),
+(724, 3, 1477800000);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `item_instance`
+-- Table structure for table `item_instance`
 --
 
 CREATE TABLE IF NOT EXISTS `item_instance` (
@@ -1722,7 +1700,7 @@ CREATE TABLE IF NOT EXISTS `item_instance` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Item System';
 
 --
--- Extraindo dados da tabela `item_instance`
+-- Dumping data for table `item_instance`
 --
 
 INSERT INTO `item_instance` (`guid`, `itemEntry`, `owner_guid`, `creatorGuid`, `giftCreatorGuid`, `count`, `duration`, `charges`, `flags`, `enchantments`, `randomPropertyId`, `durability`, `playedTime`, `text`) VALUES
@@ -1740,7 +1718,7 @@ INSERT INTO `item_instance` (`guid`, `itemEntry`, `owner_guid`, `creatorGuid`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `item_loot_items`
+-- Table structure for table `item_loot_items`
 --
 
 CREATE TABLE IF NOT EXISTS `item_loot_items` (
@@ -1760,7 +1738,7 @@ CREATE TABLE IF NOT EXISTS `item_loot_items` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `item_loot_money`
+-- Table structure for table `item_loot_money`
 --
 
 CREATE TABLE IF NOT EXISTS `item_loot_money` (
@@ -1771,7 +1749,7 @@ CREATE TABLE IF NOT EXISTS `item_loot_money` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `item_refund_instance`
+-- Table structure for table `item_refund_instance`
 --
 
 CREATE TABLE IF NOT EXISTS `item_refund_instance` (
@@ -1785,7 +1763,7 @@ CREATE TABLE IF NOT EXISTS `item_refund_instance` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `item_soulbound_trade_data`
+-- Table structure for table `item_soulbound_trade_data`
 --
 
 CREATE TABLE IF NOT EXISTS `item_soulbound_trade_data` (
@@ -1797,7 +1775,7 @@ CREATE TABLE IF NOT EXISTS `item_soulbound_trade_data` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `lag_reports`
+-- Table structure for table `lag_reports`
 --
 
 CREATE TABLE IF NOT EXISTS `lag_reports` (
@@ -1816,7 +1794,7 @@ CREATE TABLE IF NOT EXISTS `lag_reports` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `lfg_data`
+-- Table structure for table `lfg_data`
 --
 
 CREATE TABLE IF NOT EXISTS `lfg_data` (
@@ -1829,7 +1807,7 @@ CREATE TABLE IF NOT EXISTS `lfg_data` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mail`
+-- Table structure for table `mail`
 --
 
 CREATE TABLE IF NOT EXISTS `mail` (
@@ -1854,7 +1832,7 @@ CREATE TABLE IF NOT EXISTS `mail` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `mail_items`
+-- Table structure for table `mail_items`
 --
 
 CREATE TABLE IF NOT EXISTS `mail_items` (
@@ -1869,7 +1847,7 @@ CREATE TABLE IF NOT EXISTS `mail_items` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `petition`
+-- Table structure for table `petition`
 --
 
 CREATE TABLE IF NOT EXISTS `petition` (
@@ -1884,7 +1862,7 @@ CREATE TABLE IF NOT EXISTS `petition` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `petition_sign`
+-- Table structure for table `petition_sign`
 --
 
 CREATE TABLE IF NOT EXISTS `petition_sign` (
@@ -1901,7 +1879,7 @@ CREATE TABLE IF NOT EXISTS `petition_sign` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pet_aura`
+-- Table structure for table `pet_aura`
 --
 
 CREATE TABLE IF NOT EXISTS `pet_aura` (
@@ -1926,7 +1904,7 @@ CREATE TABLE IF NOT EXISTS `pet_aura` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pet_spell`
+-- Table structure for table `pet_spell`
 --
 
 CREATE TABLE IF NOT EXISTS `pet_spell` (
@@ -1939,7 +1917,7 @@ CREATE TABLE IF NOT EXISTS `pet_spell` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pet_spell_cooldown`
+-- Table structure for table `pet_spell_cooldown`
 --
 
 CREATE TABLE IF NOT EXISTS `pet_spell_cooldown` (
@@ -1954,7 +1932,7 @@ CREATE TABLE IF NOT EXISTS `pet_spell_cooldown` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pool_quest_save`
+-- Table structure for table `pool_quest_save`
 --
 
 CREATE TABLE IF NOT EXISTS `pool_quest_save` (
@@ -1964,7 +1942,7 @@ CREATE TABLE IF NOT EXISTS `pool_quest_save` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `pool_quest_save`
+-- Dumping data for table `pool_quest_save`
 --
 
 INSERT INTO `pool_quest_save` (`pool_id`, `quest_id`) VALUES
@@ -2003,14 +1981,18 @@ INSERT INTO `pool_quest_save` (`pool_id`, `quest_id`) VALUES
 (5675, 13115),
 (5676, 13830),
 (5677, 12960),
-(5678, 24590),
+(5678, 24582),
 (5683, 24873),
-(5688, 24878);
+(5687, 24875),
+(5707, 13195),
+(5708, 13153),
+(5709, 13201),
+(5710, 13191);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pvpstats_battlegrounds`
+-- Table structure for table `pvpstats_battlegrounds`
 --
 
 CREATE TABLE IF NOT EXISTS `pvpstats_battlegrounds` (
@@ -2025,7 +2007,7 @@ CREATE TABLE IF NOT EXISTS `pvpstats_battlegrounds` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pvpstats_players`
+-- Table structure for table `pvpstats_players`
 --
 
 CREATE TABLE IF NOT EXISTS `pvpstats_players` (
@@ -2049,7 +2031,7 @@ CREATE TABLE IF NOT EXISTS `pvpstats_players` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `quest_tracker`
+-- Table structure for table `quest_tracker`
 --
 
 CREATE TABLE IF NOT EXISTS `quest_tracker` (
@@ -2066,7 +2048,7 @@ CREATE TABLE IF NOT EXISTS `quest_tracker` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `reserved_name`
+-- Table structure for table `reserved_name`
 --
 
 CREATE TABLE IF NOT EXISTS `reserved_name` (
@@ -2077,7 +2059,7 @@ CREATE TABLE IF NOT EXISTS `reserved_name` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `updates`
+-- Table structure for table `updates`
 --
 
 CREATE TABLE IF NOT EXISTS `updates` (
@@ -2090,7 +2072,7 @@ CREATE TABLE IF NOT EXISTS `updates` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='List of all applied updates in this database.';
 
 --
--- Extraindo dados da tabela `updates`
+-- Dumping data for table `updates`
 --
 
 INSERT INTO `updates` (`name`, `hash`, `state`, `timestamp`, `speed`) VALUES
@@ -2116,7 +2098,7 @@ INSERT INTO `updates` (`name`, `hash`, `state`, `timestamp`, `speed`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `updates_include`
+-- Table structure for table `updates_include`
 --
 
 CREATE TABLE IF NOT EXISTS `updates_include` (
@@ -2126,7 +2108,7 @@ CREATE TABLE IF NOT EXISTS `updates_include` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='List of directories where we want to include sql updates.';
 
 --
--- Extraindo dados da tabela `updates_include`
+-- Dumping data for table `updates_include`
 --
 
 INSERT INTO `updates_include` (`path`, `state`) VALUES
@@ -2137,7 +2119,7 @@ INSERT INTO `updates_include` (`path`, `state`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `warden_action`
+-- Table structure for table `warden_action`
 --
 
 CREATE TABLE IF NOT EXISTS `warden_action` (
@@ -2149,7 +2131,7 @@ CREATE TABLE IF NOT EXISTS `warden_action` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `worldstates`
+-- Table structure for table `worldstates`
 --
 
 CREATE TABLE IF NOT EXISTS `worldstates` (
@@ -2160,7 +2142,7 @@ CREATE TABLE IF NOT EXISTS `worldstates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Variable Saves';
 
 --
--- Extraindo dados da tabela `worldstates`
+-- Dumping data for table `worldstates`
 --
 
 INSERT INTO `worldstates` (`entry`, `value`, `comment`) VALUES
@@ -2175,13 +2157,13 @@ INSERT INTO `worldstates` (`entry`, `value`, `comment`) VALUES
 (9, 0, NULL),
 (10, 0, NULL),
 (11, 0, NULL),
-(12, 0, NULL),
+(12, 1477675358, NULL),
 (13, 0, NULL),
 (14, 0, NULL),
 (15, 0, NULL),
-(16, 1476741736, NULL),
+(16, 0, NULL),
 (17, 0, NULL),
-(18, 1476741736, NULL),
+(18, 0, NULL),
 (19, 0, NULL),
 (20, 0, NULL),
 (21, 0, NULL),
@@ -2190,14 +2172,14 @@ INSERT INTO `worldstates` (`entry`, `value`, `comment`) VALUES
 (24, 0, NULL),
 (25, 0, NULL),
 (26, 0, NULL),
-(27, 1476741736, NULL),
-(28, 0, NULL),
+(27, 0, NULL),
+(28, 1477675358, NULL),
 (29, 0, NULL),
 (30, 0, NULL),
 (31, 0, NULL),
 (32, 0, NULL),
 (33, 0, NULL),
-(34, 1476741736, NULL),
+(34, 1477675358, NULL),
 (35, 0, NULL),
 (36, 0, NULL),
 (37, 0, NULL),
@@ -2216,14 +2198,14 @@ INSERT INTO `worldstates` (`entry`, `value`, `comment`) VALUES
 (50, 0, NULL),
 (51, 0, NULL),
 (52, 0, NULL),
-(53, 0, NULL),
+(53, 1477675358, NULL),
 (54, 0, NULL),
 (55, 0, NULL),
 (56, 0, NULL),
 (57, 0, NULL),
 (58, 0, NULL),
 (59, 0, NULL),
-(60, 1476741736, NULL),
+(60, 1477675358, NULL),
 (61, 0, NULL),
 (62, 0, NULL),
 (63, 0, NULL),
@@ -2234,18 +2216,19 @@ INSERT INTO `worldstates` (`entry`, `value`, `comment`) VALUES
 (68, 0, NULL),
 (69, 0, NULL),
 (70, 0, NULL),
-(3781, 245805, NULL),
+(71, 0, NULL),
+(3781, 418999, NULL),
 (3801, 0, NULL),
 (3802, 1, NULL),
 (4022, 0, NULL),
 (4023, 0, NULL),
 (4024, 0, NULL),
 (4025, 0, NULL),
-(20001, 1476743138, 'NextArenaPointDistributionTime'),
-(20002, 1476743139, 'NextWeeklyQuestResetTime'),
-(20003, 1476766800, 'NextBGRandomDailyResetTime'),
+(20001, 1477867060, 'NextArenaPointDistributionTime'),
+(20002, 1477867066, 'NextWeeklyQuestResetTime'),
+(20003, 1477717200, 'NextBGRandomDailyResetTime'),
 (20004, 0, 'cleaning_flags'),
-(20006, 1476766800, NULL),
+(20006, 1477717200, NULL),
 (20007, 1477954800, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
