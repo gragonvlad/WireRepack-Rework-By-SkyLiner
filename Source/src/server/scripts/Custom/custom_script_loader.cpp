@@ -16,20 +16,10 @@
  */
 
 // This is where scripts' loading functions should be declared:
-void AddSC_Transmogrification();
-void AddSC_announce_CurrentPlayer();
-void AddSC_announce_NewPlayer();
-void AddSC_PRESTIGE_NPC();
-void AddSC_Professions_NPC();
 
 
 // The name of this function should match:
 // void Add${NameOfDirectory}Scripts()
 void AddCustomScripts()
 {
-    AddSC_Transmogrification();
-	AddSC_announce_CurrentPlayer();
-	AddSC_announce_NewPlayer();
-	AddSC_PRESTIGE_NPC();
-	AddSC_Professions_NPC();
 }
