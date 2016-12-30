@@ -492,7 +492,7 @@ SpellProcEntry const* SpellMgr::GetSpellProcEntry(uint32 spellId) const
     return NULL;
 }
 
-bool SpellMgr::CanSpellTriggerProcOnEvent(SpellProcEntry const& procEntry, ProcEventInfo& eventInfo) const
+bool SpellMgr::CanSpellTriggerProcOnEvent(SpellProcEntry const& procEntry, ProcEventInfo& eventInfo)
 {
     // proc type doesn't match
     if (!(eventInfo.GetTypeMask() & procEntry.ProcFlags))
@@ -1517,6 +1517,9 @@ void SpellMgr::LoadSpellProcs()
                     TC_LOG_ERROR("sql.sql", "The `spell_proc` table entry for spellId %u has wrong `HitMask` set: %u", spellInfo->Id, procEntry.HitMask);
                 if (procEntry.HitMask && !(procEntry.ProcFlags & TAKEN_HIT_PROC_FLAG_MASK || (procEntry.ProcFlags & DONE_HIT_PROC_FLAG_MASK && (!procEntry.SpellPhaseMask || procEntry.SpellPhaseMask & (PROC_SPELL_PHASE_HIT | PROC_SPELL_PHASE_FINISH)))))
                     TC_LOG_ERROR("sql.sql", "The `spell_proc` table entry for spellId %u has `HitMask` value defined, but it will not be used for defined `ProcFlags` and `SpellPhaseMask` values.", spellInfo->Id);
+                for (uint8 i = 0; i < MAX_SPELL_EFFECTS; ++i)
+                    if ((procEntry.AttributesMask & (PROC_ATTR_DISABLE_EFF_0 << i)) && !spellInfo->Effects[i].IsAura())
+                        TC_LOG_ERROR("sql.sql", "The `spell_proc` table entry for spellId %u has Attribute PROC_ATTR_DISABLE_EFF_%u, but effect %u is not an aura effect", spellInfo->Id, static_cast<uint32>(i), static_cast<uint32>(i));
 
                 mSpellProcMap[spellInfo->Id] = procEntry;
 
@@ -1654,7 +1657,18 @@ void SpellMgr::LoadSpellProcs()
         }
 
         if (!procSpellTypeMask)
+        {
+            for (uint8 i = 0; i < MAX_SPELL_EFFECTS; ++i)
+            {
+                if (spellInfo->Effects[i].IsAura())
+                {
+                    TC_LOG_ERROR("sql.sql", "Spell Id %u has DBC ProcFlags %u, but it's of non-proc aura type, it probably needs an entry in `spell_proc` table to be handled correctly.", spellInfo->Id, spellInfo->ProcFlags);
+                    break;
+                }
+            }
+
             continue;
+        }
 
         SpellProcEntry procEntry;
         procEntry.SchoolMask      = 0;
@@ -2602,13 +2616,6 @@ void SpellMgr::LoadSpellInfoCorrections()
             case 42835: // Spout, remove damage effect, only anim is needed
                 spellInfo->Effects[EFFECT_0].Effect = 0;
                 break;
-            case 30657: // Quake
-                spellInfo->Effects[EFFECT_0].TriggerSpell = 30571;
-                break;
-            case 30541: // Blaze (needs conditions entry)
-                spellInfo->Effects[EFFECT_0].TargetA = SpellImplicitTargetInfo(TARGET_UNIT_TARGET_ENEMY);
-                spellInfo->Effects[EFFECT_0].TargetB = SpellImplicitTargetInfo();
-                break;
             case 63665: // Charge (Argent Tournament emote on riders)
             case 31298: // Sleep (needs target selection script)
             case 51904: // Summon Ghouls On Scarlet Crusade (this should use conditions table, script for this spell needs to be fixed)
@@ -2661,6 +2668,21 @@ void SpellMgr::LoadSpellInfoCorrections()
             case 63320: // Glyph of Life Tap
                 // Entries were not updated after spell effect change, we have to do that manually :/
                 spellInfo->AttributesEx3 |= SPELL_ATTR3_CAN_PROC_WITH_TRIGGERED;
+                break;
+            case 51627: // Turn the Tables (Rank 1)
+            case 51628: // Turn the Tables (Rank 2)
+            case 51629: // Turn the Tables (Rank 3)
+                spellInfo->AttributesEx3 |= SPELL_ATTR3_STACK_FOR_DIFF_CASTERS;
+                break;
+            case 52910: // Turn the Tables
+            case 52914: // Turn the Tables
+            case 52915: // Turn the Tables
+                spellInfo->Effects[EFFECT_0].TargetA = SpellImplicitTargetInfo(TARGET_UNIT_CASTER);
+                break;
+            case 29441: // Magic Absorption (Rank 1)
+            case 29444: // Magic Absorption (Rank 2)
+                // Caused off by 1 calculation (ie 79 resistance at level 80)
+                spellInfo->SpellLevel = 0;
                 break;
             case 5308:  // Execute (Rank 1)
             case 20658: // Execute (Rank 2)
@@ -2735,10 +2757,23 @@ void SpellMgr::LoadSpellInfoCorrections()
             case 53385: // Divine Storm (Damage)
                 spellInfo->MaxAffectedTargets = 4;
                 break;
+            case 47977: // Magic Broom
+            case 48025: // Headless Horseman's Mount
+            case 54729: // Winged Steed of the Ebon Blade
+            case 71342: // Big Love Rocket
+            case 72286: // Invincible
+            case 74856: // Blazing Hippogryph
+            case 75614: // Celestial Steed
+            case 75973: // X-53 Touring Rocket
+                // First two effects apply auras, which shouldn't be there
+                // due to NO_TARGET applying aura on current caster (core bug)
+                // Just wipe effect data, to mimic blizz-behavior
+                spellInfo->Effects[EFFECT_0].Effect = 0;
+                spellInfo->Effects[EFFECT_1].Effect = 0;
+                break;
             case 56342: // Lock and Load (Rank 1)
-                // @workaround: Delete dummy effect from rank 1,
-                // effect apply aura has TargetA == TargetB == 0 but core still applies it to caster
-                // core bug?
+                // @workaround: Delete dummy effect from rank 1
+                // effect apply aura has NO_TARGET but core still applies it to caster (same as above)
                 spellInfo->Effects[EFFECT_2].Effect = 0;
                 break;
             case 53480: // Roar of Sacrifice
@@ -2877,6 +2912,7 @@ void SpellMgr::LoadSpellInfoCorrections()
             case 49064: // Explosive Trap Effect (Rank 5)
             case 49065: // Explosive Trap Effect (Rank 6)
             case 43446: // Explosive Trap Effect (Hexlord Malacrass)
+            case 50661: // Weakened Resolve
             case 68979: // Unleashed Souls
                 spellInfo->RangeEntry = sSpellRangeStore.LookupEntry(13);
                 break;
@@ -2984,9 +3020,6 @@ void SpellMgr::LoadSpellInfoCorrections()
             case 71838: // Drain Life - Bryntroll Normal
             case 71839: // Drain Life - Bryntroll Heroic
                 spellInfo->AttributesEx2 |= SPELL_ATTR2_CANT_CRIT;
-                break;
-            case 34471: // The Beast Within
-                spellInfo->AttributesEx5 |= SPELL_ATTR5_USABLE_WHILE_CONFUSED | SPELL_ATTR5_USABLE_WHILE_FEARED | SPELL_ATTR5_USABLE_WHILE_STUNNED;
                 break;
             case 56606: // Ride Jokkum
             case 61791: // Ride Vehicle (Yogg-Saron)
@@ -3284,6 +3317,7 @@ void SpellMgr::LoadSpellInfoCorrections()
             case 70936: // Summon Suppressor (needs target selection script)
                 spellInfo->Effects[EFFECT_0].TargetA = SpellImplicitTargetInfo(TARGET_UNIT_TARGET_ANY);
                 spellInfo->Effects[EFFECT_0].TargetB = SpellImplicitTargetInfo();
+                spellInfo->RangeEntry = sSpellRangeStore.LookupEntry(157); // 90yd
                 break;
             case 72706: // Achievement Check (Valithria Dreamwalker)
             case 71357: // Order Whelp
@@ -3526,4 +3560,19 @@ void SpellMgr::LoadSpellInfoDiminishing()
     }
 
     TC_LOG_INFO("server.loading", ">> Loaded SpellInfo diminishing infos in %u ms", GetMSTimeDiffToNow(oldMSTime));
+}
+
+void SpellMgr::LoadSpellInfoImmunities()
+{
+    uint32 oldMSTime = getMSTime();
+
+    for (SpellInfo* spellInfo : mSpellInfoMap)
+    {
+        if (!spellInfo)
+            continue;
+
+        spellInfo->_LoadImmunityInfo();
+    }
+
+    TC_LOG_INFO("server.loading", ">> Loaded SpellInfo immunity infos in %u ms", GetMSTimeDiffToNow(oldMSTime));
 }

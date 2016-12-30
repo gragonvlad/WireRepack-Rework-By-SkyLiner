@@ -29,13 +29,7 @@
 
 struct WayPoint
 {
-    WayPoint(uint32 _id, float _x, float _y, float _z)
-    {
-        id = _id;
-        x = _x;
-        y = _y;
-        z = _z;
-    }
+    WayPoint() : id(0), x(0.0f), y(0.0f), z(0.0f) { }
 
     uint32 id;
     float x;
@@ -552,13 +546,14 @@ enum SMART_ACTION
     SMART_ACTION_REMOVE_POWER                       = 110,    // PowerType, newPower
     SMART_ACTION_GAME_EVENT_STOP                    = 111,    // GameEventId
     SMART_ACTION_GAME_EVENT_START                   = 112,    // GameEventId
-    SMART_ACTION_START_CLOSEST_WAYPOINT             = 113,    // wp1, wp2, wp3, wp4, wp5, wp6, wp7
+    // Not used                                     = 113,
     SMART_ACTION_MOVE_OFFSET                        = 114,
     SMART_ACTION_RANDOM_SOUND                       = 115,    // soundId1, soundId2, soundId3, soundId4, soundId5, onlySelf
     SMART_ACTION_SET_CORPSE_DELAY                   = 116,    // timer
     SMART_ACTION_DISABLE_EVADE                      = 117,    // 0/1 (1 = disabled, 0 = enabled)
+    SMART_ACTION_GO_SET_GO_STATE                    = 118,    // state
 
-    SMART_ACTION_END                                = 118
+    SMART_ACTION_END                                = 119
 };
 
 struct SmartAction
@@ -1020,6 +1015,11 @@ struct SmartAction
 
         struct
         {
+            uint32 state;
+        } goState;
+
+        struct
+        {
             uint32 group;
             uint32 attackInvoker;
         } creatureGroup;
@@ -1412,7 +1412,7 @@ struct SmartScriptHolder
     operator bool() const { return entryOrGuid != 0; }
 };
 
-typedef std::unordered_map<uint32, WayPoint*> WPPath;
+typedef std::vector<WayPoint> WPPath;
 
 typedef std::list<WorldObject*> ObjectList;
 
@@ -1472,22 +1472,23 @@ class TC_GAME_API SmartWaypointMgr
 {
     private:
         SmartWaypointMgr() { }
-        ~SmartWaypointMgr();
+        ~SmartWaypointMgr() { }
 
     public:
         static SmartWaypointMgr* instance();
 
         void LoadFromDB();
 
-        WPPath* GetPath(uint32 id)
+        WPPath const* GetPath(uint32 id)
         {
-            if (waypoint_map.find(id) != waypoint_map.end())
-                return waypoint_map[id];
-            else return nullptr;
+            auto itr = waypoint_map.find(id);
+            if (itr != waypoint_map.end())
+                return &itr->second;
+            return nullptr;
         }
 
     private:
-        std::unordered_map<uint32, WPPath*> waypoint_map;
+        std::unordered_map<uint32, WPPath> waypoint_map;
 };
 
 // all events for a single entry

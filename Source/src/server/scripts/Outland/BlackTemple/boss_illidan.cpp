@@ -539,8 +539,7 @@ public:
         void EnterCombat(Unit* /*who*/) override
         {
             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_IMMUNE_TO_PC);
-            me->setActive(true);
-            DoZoneInCombat();
+            _EnterCombat();
         }
 
         void AttackStart(Unit* who) override
@@ -560,9 +559,6 @@ public:
         void JustDied(Unit* /*killer*/) override
         {
             me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
-
-            for (uint8 i = DATA_GO_ILLIDAN_DOOR_R; i < DATA_GO_ILLIDAN_DOOR_L + 1; ++i)
-                instance->HandleGameObject(instance->GetGuidData(i), true);
 
             _JustDied();
         }
@@ -591,7 +587,7 @@ public:
                     SetEquipmentSlots(false, EQUIP_ID_MAIN_HAND, EQUIP_UNEQUIP, EQUIP_NO_CHANGE);
                 else
                     SetEquipmentSlots(false, EQUIP_UNEQUIP, EQUIP_ID_OFF_HAND, EQUIP_NO_CHANGE);
-                me->SetByteValue(UNIT_FIELD_BYTES_2, 0, SHEATH_STATE_MELEE);
+                me->SetSheath(SHEATH_STATE_MELEE);
             }
         }
 
@@ -879,7 +875,7 @@ public:
                 case 10: // attack
                     DoResetThreat();
                     me->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NON_ATTACKABLE + UNIT_FLAG_NOT_SELECTABLE);
-                    me->SetByteValue(UNIT_FIELD_BYTES_2, 0, SHEATH_STATE_MELEE);
+                    me->SetSheath(SHEATH_STATE_MELEE);
                     EnterPhase(PHASE_NORMAL_2);
                     break;
                 default:
@@ -903,7 +899,7 @@ public:
             {
                 // Requip warglaives if needed
                 SetEquipmentSlots(false, EQUIP_ID_MAIN_HAND, EQUIP_ID_OFF_HAND, EQUIP_NO_CHANGE);
-                me->SetByteValue(UNIT_FIELD_BYTES_2, 0, SHEATH_STATE_MELEE);
+                me->SetSheath(SHEATH_STATE_MELEE);
             }
             else
             {
@@ -1412,23 +1408,13 @@ public:
 
             IllidanGUID = instance->GetGuidData(DATA_ILLIDAN_STORMRAGE);
             GateGUID = instance->GetGuidData(DATA_GO_ILLIDAN_GATE);
-            DoorGUID[0] = instance->GetGuidData(DATA_GO_ILLIDAN_DOOR_R);
-            DoorGUID[1] = instance->GetGuidData(DATA_GO_ILLIDAN_DOOR_L);
 
             if (JustCreated) // close all doors at create
-            {
                 instance->HandleGameObject(GateGUID, false);
-
-                for (uint8 i = 0; i < 2; ++i)
-                    instance->HandleGameObject(DoorGUID[i], false);
-            }
             else // open all doors, raid wiped
             {
                 instance->HandleGameObject(GateGUID, true);
                 WalkCount = 1; // skip first wp
-
-                for (uint8 i = 0; i < 2; ++i)
-                    instance->HandleGameObject(DoorGUID[i], true);
             }
 
             KillAllElites();
@@ -1480,9 +1466,6 @@ public:
 
         void BeginTalk()
         {
-            instance->SetBossState(DATA_ILLIDAN_STORMRAGE, IN_PROGRESS);
-            for (uint8 i = 0; i < 2; ++i)
-                instance->HandleGameObject(DoorGUID[i], false);
             if (Creature* illidan = ObjectAccessor::GetCreature(*me, IllidanGUID))
             {
                 illidan->RemoveAurasDueToSpell(SPELL_KNEEL);
@@ -1674,10 +1657,6 @@ public:
         {
             switch (WalkCount)
             {
-            case 6:
-                for (uint8 i = 0; i < 2; ++i)
-                    instance->HandleGameObject(DoorGUID[i], true);
-                break;
             case 8:
                 if (Phase == PHASE_WALK)
                     EnterPhase(PHASE_TALK);
@@ -1795,7 +1774,6 @@ public:
         ObjectGuid ChannelGUID;
         ObjectGuid SpiritGUID[2];
         ObjectGuid GateGUID;
-        ObjectGuid DoorGUID[2];
         uint32 ChannelCount;
         uint32 WalkCount;
         uint32 TalkCount;
@@ -1888,7 +1866,7 @@ void boss_illidan_stormrage::boss_illidan_stormrageAI::HandleTalkSequence()
     case 8:
         // Equip our warglaives!
         SetEquipmentSlots(false, EQUIP_ID_MAIN_HAND, EQUIP_ID_OFF_HAND, EQUIP_NO_CHANGE);
-        me->SetByteValue(UNIT_FIELD_BYTES_2, 0, SHEATH_STATE_MELEE);
+        me->SetSheath(SHEATH_STATE_MELEE);
         me->SetWalk(false);
         break;
     case 9:
