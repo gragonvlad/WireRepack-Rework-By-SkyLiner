@@ -285,7 +285,7 @@ void Creature::RemoveCorpse(bool setSpawnTime)
     m_corpseRemoveTime = time(NULL);
     setDeathState(DEAD);
     RemoveAllAuras();
-    UpdateObjectVisibility();
+    DestroyForNearbyPlayers(); // old UpdateObjectVisibility()
     loot.clear();
     uint32 respawnDelay = m_respawnDelay;
     if (IsAIEnabled)
@@ -294,6 +294,10 @@ void Creature::RemoveCorpse(bool setSpawnTime)
     // Should get removed later, just keep "compatibility" with scripts
     if (setSpawnTime)
         m_respawnTime = time(NULL) + respawnDelay;
+
+    // if corpse was removed during falling, the falling will continue and override relocation to respawn position
+    if (IsFalling())
+        StopMoving();
 
     float x, y, z, o;
     GetRespawnPosition(x, y, z, &o);
@@ -2788,6 +2792,10 @@ void Creature::UpdateMovementFlags()
     if (m_playerMovingMe)
         return;
 
+    // Creatures with CREATURE_FLAG_EXTRA_NO_MOVE_FLAGS_UPDATE should control MovementFlags in your own scripts
+    if (GetCreatureTemplate()->flags_extra & CREATURE_FLAG_EXTRA_NO_MOVE_FLAGS_UPDATE)
+        return;
+
     // Set the movement flags if the creature is in that mode. (Only fly if actually in air, only swim if in water, etc)
     float ground = GetMap()->GetHeight(GetPhaseMask(), GetPositionX(), GetPositionY(), GetPositionZMinusOffset());
 
@@ -2818,8 +2826,8 @@ void Creature::SetObjectScale(float scale)
 
     if (CreatureModelInfo const* minfo = sObjectMgr->GetCreatureModelInfo(GetDisplayId()))
     {
-        SetFloatValue(UNIT_FIELD_BOUNDINGRADIUS, minfo->bounding_radius * scale);
-        SetFloatValue(UNIT_FIELD_COMBATREACH, minfo->combat_reach * scale);
+        SetFloatValue(UNIT_FIELD_BOUNDINGRADIUS, (IsPet() ? 1.0f : minfo->bounding_radius) * scale);
+        SetFloatValue(UNIT_FIELD_COMBATREACH, (IsPet() ? DEFAULT_COMBAT_REACH : minfo->combat_reach) * scale);
     }
 }
 
@@ -2829,8 +2837,8 @@ void Creature::SetDisplayId(uint32 modelId)
 
     if (CreatureModelInfo const* minfo = sObjectMgr->GetCreatureModelInfo(modelId))
     {
-        SetFloatValue(UNIT_FIELD_BOUNDINGRADIUS, minfo->bounding_radius * GetObjectScale());
-        SetFloatValue(UNIT_FIELD_COMBATREACH, minfo->combat_reach * GetObjectScale());
+        SetFloatValue(UNIT_FIELD_BOUNDINGRADIUS, (IsPet() ? 1.0f : minfo->bounding_radius) * GetObjectScale());
+        SetFloatValue(UNIT_FIELD_COMBATREACH, (IsPet() ? DEFAULT_COMBAT_REACH : minfo->combat_reach) * GetObjectScale());
     }
 }
 
@@ -2848,8 +2856,10 @@ void Creature::FocusTarget(Spell const* focusSpell, WorldObject const* target)
     if (m_focusSpell)
         return;
 
+    SpellInfo const* spellInfo = focusSpell->GetSpellInfo();
+
     // don't use spell focus for vehicle spells
-    if (focusSpell->GetSpellInfo()->HasAura(SPELL_AURA_CONTROL_VEHICLE))
+    if (spellInfo->HasAura(SPELL_AURA_CONTROL_VEHICLE))
         return;
 
     if ((!target || target == this) && !focusSpell->GetCastTime()) // instant cast, untargeted (or self-targeted) spell doesn't need any facing updates
@@ -2872,15 +2882,15 @@ void Creature::FocusTarget(Spell const* focusSpell, WorldObject const* target)
 
         if ( // here we determine if the (relatively expensive) forced update is worth it, or whether we can afford to wait until the scheduled update tick
             ( // only require instant update for spells that actually have a visual
-                focusSpell->GetSpellInfo()->SpellVisual[0] ||
-                focusSpell->GetSpellInfo()->SpellVisual[1]
+                spellInfo->SpellVisual[0] ||
+                spellInfo->SpellVisual[1]
             ) && (
                 !focusSpell->GetCastTime() || // if the spell is instant cast
-                focusSpell->GetSpellInfo()->HasAttribute(SPELL_ATTR5_DONT_TURN_DURING_CAST) // client gets confused if we attempt to turn at the regularly scheduled update packet
+                spellInfo->HasAttribute(SPELL_ATTR5_DONT_TURN_DURING_CAST) // client gets confused if we attempt to turn at the regularly scheduled update packet
             )
         )
         {
-            std::list<Player*> playersNearby;
+            std::vector<Player*> playersNearby;
             GetPlayerListInGrid(playersNearby, GetVisibilityRange());
             for (Player* player : playersNearby)
             {
@@ -2891,7 +2901,7 @@ void Creature::FocusTarget(Spell const* focusSpell, WorldObject const* target)
         }
     }
 
-    bool canTurnDuringCast = !focusSpell->GetSpellInfo()->HasAttribute(SPELL_ATTR5_DONT_TURN_DURING_CAST);
+    bool const canTurnDuringCast = !spellInfo->HasAttribute(SPELL_ATTR5_DONT_TURN_DURING_CAST);
     // Face the target - we need to do this before the unit state is modified for no-turn spells
     if (target)
         SetFacingToObject(target);
