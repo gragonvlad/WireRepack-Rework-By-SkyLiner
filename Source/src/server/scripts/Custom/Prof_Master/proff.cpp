@@ -20,26 +20,26 @@ struct ProfessionMenu {
 };
 
 ProfessionMenu mpData [] = {
-	{ 1, 2, 3, 0, 0, "|cff1C1C1C|TInterface/ICONS/achievement_general:30:30:-16:0|t[Primary Professions]|r" },
-	{ 1, 3, 3, 0, 0, "|cff90EE90|TInterface/ICONS/achievement_general:30:30:-16:0|t[Secondary Professions]|r" },
+	{ 1, 2, 3, 0, 0, "|cff1C1C1C|TInterface/ICONS/achievement_general:30:30:-16:0|t[Primary Professions]|r"		},
+	{ 1, 3, 3, 0, 0, "|cff90EE90|TInterface/ICONS/achievement_general:30:30:-16:0|t[Secondary Professions]|r"	},
 	// Primary Professions
-	{ 2, 0, 3, pValue, 171, "|TInterface\\icons\\trade_alchemy:30:30:-16:0|t Alchemy.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_ALCHEMY 171
-	{ 2, 0, 3, pValue, 164,"|TInterface\\icons\\INV_Ingot_05:30:30:-16:0|t Blacksmithing.", "|cff1E90FFAre you sure you want that profession?|r" }, // SKILL_BLACKSMITHING 164
-	{ 2, 0, 3, pValue, 165,"|TInterface\\icons\\INV_Misc_LeatherScrap_02:30:30:-16:0|t Leatherworking.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_LEATHERWORKING 165
-	{ 2, 0, 3, pValue, 197,"|TInterface\\icons\\INV_Fabric_Felcloth_Ebon:30:30:-16:0|t Tailoring.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_TAILORING 197
-	{ 2, 0, 3, pValue, 202,"|TInterface\\icons\\inv_misc_wrench_01:30:30:-16:0|t Engineering.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_ENGINEERING 202
-	{ 2, 0, 3, pValue, 333,"|TInterface\\icons\\trade_engraving:30:30:-16:0|t Enchanting.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_ENCHANTING 333
-	{ 2, 0, 3, pValue, 755,"|TInterface\\icons\\inv_misc_gem_01:30:30:-16:0|t Jewelcrafting.", "|cff1E90FFAre you sure you want that profession?|r" }, // SKILL_JEWELCRAFTING 755
-	{ 2, 0, 3, pValue, 773,"|TInterface\\icons\\INV_Scroll_08:30:30:-16:0|t Inscription.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_INSCRIPTION 773
-	{ 2, 0, 3, pValue, 182, "|TInterface\\icons\\INV_Misc_Herb_07:30:30:-16:0|t Herbalism.", "|cff1E90FFAre you sure you want that profession?|r" }, // SKILL_HERBALISM 182
-	{ 2, 0, 3, pValue, 186, "|TInterface\\icons\\trade_mining:30:30:-16:0|t Mining.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_MINING 186
-	{ 2, 0, 3, pValue, 393, "|TInterface\\icons\\inv_misc_pelt_wolf_01:30:30:-16:0|t Skinning.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_SKINNING 393
-	{ 2, 1, 3, 0, 0, "|cff0000FF|TInterface\\icons\\inv_misc_questionmark:20:20:-16:0|t<< Back" },
+	{ 2, 0, 3, pValue, 171, "|TInterface\\icons\\trade_alchemy:30:30:-16:0|t Alchemy.", "|cff1E90FFAre you sure you want that profession?|r"						}, //SKILL_ALCHEMY 171
+	{ 2, 0, 3, pValue, 164,	"|TInterface\\icons\\INV_Ingot_05:30:30:-16:0|t Blacksmithing.", "|cff1E90FFAre you sure you want that profession?|r"					}, // SKILL_BLACKSMITHING 164
+	{ 2, 0, 3, pValue, 165,	"|TInterface\\icons\\INV_Misc_LeatherScrap_02:30:30:-16:0|t Leatherworking.", "|cff1E90FFAre you sure you want that profession?|r"		}, //SKILL_LEATHERWORKING 165
+	{ 2, 0, 3, pValue, 197,	"|TInterface\\icons\\INV_Fabric_Felcloth_Ebon:30:30:-16:0|t Tailoring.", "|cff1E90FFAre you sure you want that profession?|r"			}, //SKILL_TAILORING 197
+	{ 2, 0, 3, pValue, 202,	"|TInterface\\icons\\inv_misc_wrench_01:30:30:-16:0|t Engineering.", "|cff1E90FFAre you sure you want that profession?|r"				}, //SKILL_ENGINEERING 202
+	{ 2, 0, 3, pValue, 333,	"|TInterface\\icons\\trade_engraving:30:30:-16:0|t Enchanting.", "|cff1E90FFAre you sure you want that profession?|r"					}, //SKILL_ENCHANTING 333
+	{ 2, 0, 3, pValue, 755,	"|TInterface\\icons\\inv_misc_gem_01:30:30:-16:0|t Jewelcrafting.", "|cff1E90FFAre you sure you want that profession?|r"				}, // SKILL_JEWELCRAFTING 755
+	{ 2, 0, 3, pValue, 773,	"|TInterface\\icons\\INV_Scroll_08:30:30:-16:0|t Inscription.", "|cff1E90FFAre you sure you want that profession?|r"					}, //SKILL_INSCRIPTION 773
+	{ 2, 0, 3, pValue, 182, "|TInterface\\icons\\INV_Misc_Herb_07:30:30:-16:0|t Herbalism.", "|cff1E90FFAre you sure you want that profession?|r"					}, // SKILL_HERBALISM 182
+	{ 2, 0, 3, pValue, 186, "|TInterface\\icons\\trade_mining:30:30:-16:0|t Mining.", "|cff1E90FFAre you sure you want that profession?|r"							}, //SKILL_MINING 186
+	{ 2, 0, 3, pValue, 393, "|TInterface\\icons\\inv_misc_pelt_wolf_01:30:30:-16:0|t Skinning.", "|cff1E90FFAre you sure you want that profession?|r"				}, //SKILL_SKINNING 393
+	{ 2, 1, 3, 0,	     0,	"|cff0000FF|TInterface\\icons\\inv_misc_questionmark:20:20:-16:0|t<< Back"																},
 	// Secondary Professions		
-	{ 3, 0, 3, pValue, 185, "|TInterface/ICONS/INV_Misc_Food_15:30:30:-16:0|t Cooking.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_COOKING 185
-	{ 3, 0, 3, pValue, 129, "|TInterface/ICONS/spell_holy_sealofsacrifice:30:30:-16:0|t First Aid.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_FIRST_AID 129
-	{ 3, 0, 3, pValue, 356, "|TInterface/ICONS/Trade_Fishing:30:30:-16:0|t Fishing.", "|cff1E90FFAre you sure you want that profession?|r" }, //SKILL_FISHING 356
-	{ 3, 1, 3, 0, 0, "|cff0000FF|TInterface\\icons\\inv_misc_questionmark:20:20:-16:0|t<< Back" }
+	{ 3, 0, 3, pValue, 185, "|TInterface/ICONS/INV_Misc_Food_15:30:30:-16:0|t Cooking.", "|cff1E90FFAre you sure you want that profession?|r"						}, //SKILL_COOKING 185
+	{ 3, 0, 3, pValue, 129, "|TInterface/ICONS/spell_holy_sealofsacrifice:30:30:-16:0|t First Aid.", "|cff1E90FFAre you sure you want that profession?|r"			}, //SKILL_FIRST_AID 129
+	{ 3, 0, 3, pValue, 356, "|TInterface/ICONS/Trade_Fishing:30:30:-16:0|t Fishing.", "|cff1E90FFAre you sure you want that profession?|r"							}, //SKILL_FISHING 356
+	{ 3, 1, 3, 0, 0,		"|cff0000FF|TInterface\\icons\\inv_misc_questionmark:20:20:-16:0|t<< Back"																}
 };
 
 class Professions_NPC : public CreatureScript {
@@ -48,7 +48,7 @@ public:
 
 	void GetProfessionMenu(Player* player, Creature* creature, uint32 menuId) {
 		player->PlayerTalkClass->ClearMenus();
-		std::ostringstream Bs;
+		ostringstream Bs;
 		bool epMENU = false;
 		for (uint8 i = 0; i < (sizeof(mpData) / sizeof(*mpData)); i++)
 		{
@@ -231,14 +231,14 @@ public:
 	mod_npc_Professions_WorldScript() : WorldScript("mod_npcprofessi_WorldScript") { }
 
 	void OnConfigLoad(bool /*reload*/)	{
-		ChargeProfession       = sConfigMgr->GetBoolDefault("Enable.Charge.Profession", true);
-		ChargeProfessionHONOR  = sConfigMgr->GetIntDefault("Charge.Profession_Honor.or.Item", 0);
-		IdEmblem			   = sConfigMgr->GetIntDefault("Id_Item", 0);
-		pValue                 = sConfigMgr->GetIntDefault("Value_To_Charge", 0);
-		pProfessionVIP         = sConfigMgr->GetBoolDefault("ProfessionVIP", false);
-		qProfessionVIP         = sConfigMgr->GetIntDefault("QuantityProfessionVIP", 0);
-		qProfessionNormal      = sConfigMgr->GetIntDefault("QuantityProfessionNormal", 0);
-		IdItemProfessionVIP    = sConfigMgr->GetIntDefault("Id.ItemVIP", 0);
+		ChargeProfession       = sConfigMgr->GetBoolDefault("Enable.Charge.Profession",			true);
+		ChargeProfessionHONOR  = sConfigMgr->GetIntDefault(	"Charge.Profession_Honor.or.Item",	0);
+		IdEmblem			   = sConfigMgr->GetIntDefault(	"Id_Item",							0);
+		pValue                 = sConfigMgr->GetIntDefault(	"Value_To_Charge",					0);
+		pProfessionVIP         = sConfigMgr->GetBoolDefault("ProfessionVIP",					false);
+		qProfessionVIP         = sConfigMgr->GetIntDefault(	"QuantityProfessionVIP",			0);
+		qProfessionNormal      = sConfigMgr->GetIntDefault(	"QuantityProfessionNormal",			0);
+		IdItemProfessionVIP    = sConfigMgr->GetIntDefault(	"Id.ItemVIP",						0);
 	}
 };
 
